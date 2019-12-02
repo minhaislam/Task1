@@ -103,10 +103,7 @@ function fpass () {
 			alert('At least 8 words');
 			//document.getElementById('n1').innerHTML="At least two words";
 		}
-		else if((uname.value[0]<'A' || uname.value[0]>'Z') && (uname.value[0]<'a' || uname.value[0]>'z')){
-			alert('starts with letter');
-			//document.getElementById('n1').innerHTML="starts with letter";
-		}
+	
 		
 		}
 
@@ -160,7 +157,7 @@ function fpass () {
 			<tr>
 				<td>Confirm Password</td>
 				<td>:</td>
-				<td><input name="confirmPassword" type="password"></td>
+				<td><input name="confirmPassword" type="password" id="cpass"><br><input name="submit" type="submit" onclick="fcpass()"></td>
 				<td></td>
 			</tr>		
 			<tr><td colspan="4"><hr/></td></tr>
