@@ -49,7 +49,7 @@ function valid(){
 			
 			else{return false;}
 			alert(name.value+"\n"+email+"\n"+uname.value+"\n"+pass.value+"\n"+radio()+"\n"+d.value+"/"+m.value+"/"+y.value);
-			return false;
+			return true;
 				//
 			
 		}
@@ -78,6 +78,10 @@ function fname (name) {
 			document.getElementById('em1').innerHTML="starts with letter";
 			return false;
 		}
+		else{
+			document.getElementById('em1').innerHTML="&#10003";
+			return true;
+		}
 		return name;
 		
 		}
@@ -100,6 +104,10 @@ function fname (name) {
 			//alert('starts with letter');
 			document.getElementById('em3').innerHTML="starts with letter";
 			return false;
+		}
+		else{
+			document.getElementById('em3').innerHTML="&#10003";
+			return true;
 		}
 		return uname;
 		
@@ -153,6 +161,10 @@ function fname (name) {
          document.getElementById('em2').innerHTML="Domain's last . should be 2 chars or more from the end";
         return false;
     }
+    else{
+			document.getElementById('em2').innerHTML="&#10003";
+			return true;
+		}
     }
     }
     }
@@ -171,6 +183,10 @@ function fpass (pass) {
 		else if(pass.value.length<8){
 			document.getElementById('em4').innerHTML="must contain 8 characters";
         return false;
+		}
+		else{
+			document.getElementById('em4').innerHTML="&#10003";
+			return true;
 		}
 		return pass;
 	}
