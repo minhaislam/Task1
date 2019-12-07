@@ -22,7 +22,8 @@ function valid(){
 			//return true;
 		}
 			if (femail(email))
-			{	document.getElementById('em2').innerHTML=email;
+			{	
+				document.getElementById('em2').innerHTML=email;
 			// return false;
 			}
 			if (funame(uname))
@@ -119,6 +120,10 @@ function fname (name) {
     if (email=="") {
     	document.getElementById('em2').innerHTML="empty";
     return false;
+    }
+    else if (search(email)) {
+    	return search(email);
+    	//return true;
     }
     else{
     	var emailParts = email.split('@');
@@ -269,4 +274,22 @@ if(document.getElementById("r3").checked){
 				return m;
 				return y;
 
+		}
+
+		function search(val){
+			
+				var xhttp = new XMLHttpRequest();
+				xhttp.open("POST", "search.php", true);
+				xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+				xhttp.send('key='+val);
+			
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					 	document.getElementById('em2').innerHTML = this.responseText;					 
+						
+					}
+					else {
+						return false;
+					}
+				};
 		}
